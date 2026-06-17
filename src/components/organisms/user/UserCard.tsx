@@ -5,10 +5,11 @@ type Props = {
    imageUrl: string;
    userName: string;
    fullName: string;
+   onClick: () => void;
  }
 
 export const UesrCard: VFC = memo((props) => {
-    const { imageUrl, userName, fullName } = Props;
+    const { imageUrl, userName, fullName, onClick } = Props;
     return (
         <Box 
         w="260px" 
@@ -18,6 +19,7 @@ export const UesrCard: VFC = memo((props) => {
         shadow="md"
         p={4}
         _hover={{ cursor: "pointer", opacity: 0.8 }}
+        onClick={onClick}
         >
             <Stack textAlign="center">
                 <Image
